@@ -16,7 +16,7 @@ export default {
    */
   register(credentials, params = null) {
     return goFetch(
-      '/api/users',
+      '/api/customers',
       {
         method: 'POST',
         body: credentials,

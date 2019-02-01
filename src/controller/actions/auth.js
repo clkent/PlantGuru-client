@@ -15,6 +15,22 @@ export const submitAuthRefresh = () => dispatch => {
     .catch(err => dispatch(authError(err)));
 };
 
+export const submitAuthRegistration = credentials => dispatch => {
+  dispatch(authSubmit());
+  api.auth
+    .register(credentials)
+    .then(user => dispatch(authSuccess(user)))
+    .catch(err => dispatch(authError(err)));
+};
+
+export const submitAuthLogin = credentials => dispatch => {
+  dispatch(authSubmit());
+  api.auth
+    .login(credentials)
+    .then(user => dispatch(authSuccess(user)))
+    .catch(err => dispatch(authError(err)));
+};
+
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const authLogout = () => {
   cache.authToken.clear();

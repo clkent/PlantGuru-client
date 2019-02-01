@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import Test from './Landing/Test';
-
+import Register from './Landing/Register';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 class App extends Component {
   render() {
-    return <Test />;
+    return (
+      <Router>
+        <Switch>
+          <Route path="/register" exact component={Register} />
+        </Switch>
+      </Router>
+    );
   }
 }
 
